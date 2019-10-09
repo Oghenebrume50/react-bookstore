@@ -1,5 +1,5 @@
 import React from 'react';
-import Book from './Book';
+import Book from '../containers/Book';
 
 const BooksList = () => {
   return(
@@ -10,10 +10,12 @@ const BooksList = () => {
         <th>Category</th>
       </thead>
       <tbody>
-        {props.checkBooksList.map((book, idx) => {
-          <Book key={idx} book={book}/>
-        })}
+          <Book key={1} book={{id: 1, title: 'First book in series', category: 'sci-fi'}}/>
+          <Book key={2} book={{id: 2, title: 'Second book in series', category: 'romance'}}/>
+          <Book key={3} book={{id: 3, title: 'Third book in series', category: 'sci-fi'}}/>
       </tbody>
     </table>
   )
 }
+
+export default BooksList; 
