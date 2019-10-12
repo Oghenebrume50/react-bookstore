@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { createBook } from '../actions';
 
 class BooksForm extends React.Component {
   constructor(props){
@@ -8,6 +11,7 @@ class BooksForm extends React.Component {
       category: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e){
@@ -17,11 +21,28 @@ class BooksForm extends React.Component {
     });
   }
 
+  handleSubmit(e){
+    e.preventDefault();
+
+    this.props.createBook({
+      id: 1,
+      title: this.state.title,
+      category: this.state.category
+    })
+
+    this.setState({
+      title: '',
+      category: 'Action'
+    });
+
+    e.target.reset();
+  }
+
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input type='text' 
           placeholder='enter book title'
           name='title'
@@ -42,4 +63,10 @@ class BooksForm extends React.Component {
   }
 }
 
-export default BooksForm;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createBook: book => dispatch(createBook(book))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(BooksForm);
