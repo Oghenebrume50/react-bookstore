@@ -10,6 +10,7 @@ class BooksForm extends React.Component {
       title: '',
       category: ''
     }
+    
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -25,7 +26,7 @@ class BooksForm extends React.Component {
     e.preventDefault();
 
     this.props.createBook({
-      id: 1,
+      id: Math.floor((Math.random () * 50) + 1),
       title: this.state.title,
       category: this.state.category
     })
