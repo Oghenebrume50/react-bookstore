@@ -5,15 +5,21 @@ import { removeBook } from '../actions/index';
 import Book from '../components/Book';
 
 class BooksList extends React.Component {
+  constructor(props){
+    super(props)
+    this.handleRemoveBook = this.handleRemoveBook.bind(this);
+  }
+
+  handleRemoveBook(book) {
+    this.props.removeBook(book)
+  }
+
   render() {
     const Books = this.props.books.map((book, idx) => 
-      <Book key={idx} id={book.id} 
-            title={book.title} 
-            category={book.category} 
-            removeBook={this.props.removeBook}
+      <Book key={idx} book={book} remove={this.handleRemoveBook}
       />
     );
-    
+
     return(
       <table>
         <thead>
