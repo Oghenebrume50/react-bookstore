@@ -5,18 +5,10 @@ import { removeBook } from '../actions/index';
 import Book from '../components/Book';
 
 class BooksList extends React.Component {
-  constructor(props){
-    super(props)
-    this.handleRemoveBook = this.handleRemoveBook.bind(this);
-  }
-
-  handleRemoveBook(book) {
-    this.props.removeBook(book)
-  }
 
   render() {
     const Books = this.props.books.map((book, idx) => 
-      <Book key={idx} book={book} remove={this.handleRemoveBook}
+      <Book key={idx} book={book} remove={this.props.removeBook}
       />
     );
 
@@ -44,10 +36,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeBook: book => dispatch(removeBook(book))
-  }
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(BooksList);
+export default connect(mapStateToProps, { removeBook } )(BooksList);

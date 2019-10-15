@@ -11,11 +11,12 @@ class Book extends React.Component {
   }
 
   render(){
+    const {id, title, category} = this.props.book;
   return (
     <tr>
-      <td>{this.props.book.id}</td>
-      <td>{this.props.book.title}</td>
-      <td>{this.props.book.category}</td>
+      <td>{ id }</td>
+      <td>{ title }</td>
+      <td>{ category }</td>
       <td>
         <button onClick={this.handleClick}>delete</button>
       </td>
