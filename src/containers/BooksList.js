@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { removeBook } from '../actions/index';
 import Book from '../components/Book';
+import CategoryFilter from '../components/CategoryFilter';
 
 class BooksList extends React.Component {
 
@@ -13,19 +14,22 @@ class BooksList extends React.Component {
     );
 
     return(
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Delete Book</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Books}
-        </tbody>
-      </table>
+      <div>
+        <CategoryFilter />
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Delete Book</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Books}
+          </tbody>
+        </table>
+      </div>
     )
   }
 }

@@ -4,6 +4,7 @@ import shortid from 'shortid';
 import { connect } from 'react-redux';
 
 import { createBook } from '../actions';
+import categories from '../utils/categories';
 
 class BooksForm extends React.Component {
   constructor(props){
@@ -42,7 +43,6 @@ class BooksForm extends React.Component {
   }
 
   render() {
-    const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
