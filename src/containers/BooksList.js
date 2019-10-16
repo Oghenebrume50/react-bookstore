@@ -7,8 +7,8 @@ import Book from '../components/Book';
 class BooksList extends React.Component {
 
   render() {
-    const Books = this.props.books.map((book, idx) => 
-      <Book key={idx} book={book} remove={this.props.removeBook}
+    const Books = this.props.books.map((book) => 
+      <Book key={book.id} book={book} remove={this.props.removeBook}
       />
     );
 
