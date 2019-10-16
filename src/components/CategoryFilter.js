@@ -1,17 +1,18 @@
 import React from 'react';
 import categories from '../utils/categories';
 
-const CategoryFilter = () => {
+const CategoryFilter = (props) => {
   const FilterCategories = ['All', ...categories];
   return(
     <div>
       <p>Filter</p>
       <div>
-        <select 
+        <select
         name='category'
+        onChange={props.changeFilter}
         >
           {FilterCategories.map((category, idx) => 
-            <option key={idx}>{category}</option>
+            <option key={idx} value={category}>{category}</option>
           )}
         </select>
       </div>
