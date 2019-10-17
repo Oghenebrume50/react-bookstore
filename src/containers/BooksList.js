@@ -6,8 +6,9 @@ import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
 const filteredBooks = (books, filterVal) => {
+  
   return filterVal === 'All' ? books : 
-    books.filter(book => book.category === filterVal.toLowerCase());
+    books.filter(book => book.category.toLowerCase() === filterVal.toLowerCase());
 }
 
 class BooksList extends React.Component {
