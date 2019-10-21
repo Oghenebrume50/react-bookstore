@@ -1,5 +1,6 @@
 const CREATE_BOOK = 'CREATE BOOK';
 const REMOVE_BOOK = 'REMOVE BOOK';
+const CHANGE_FILTER = 'CHANGE FILTER';
 
 const createBook = (book) => {
   return {
@@ -15,4 +16,11 @@ const removeBook = (book) => {
   }
 }
 
-export {createBook, removeBook};
+const changeFilter = (filter) => {
+  return {
+    type: CHANGE_FILTER,
+    filter,
+  }
+}
+
+export {createBook, removeBook, changeFilter};
