@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50em;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.table {
+  width: 100%;
+}
+
+/*=========================
+  Bookform
+==========================*/
