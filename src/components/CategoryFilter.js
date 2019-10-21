@@ -5,9 +5,9 @@ const CategoryFilter = (props) => {
   const FilterCategories = ['All', ...categories];
   return(
     <div className='header'>
-      <div>BookStore CMS</div>
-      <div>
-        <p>Categories</p>
+      <div className='appTitle'>BookStore CMS</div>
+      <div className='filterDiv'>
+        <p className='hashText'>Categories</p>
         <select
         name='category'
         onChange={props.changeFilter}
