@@ -13,14 +13,16 @@ class Book extends React.Component {
   render(){
     const {id, title, category} = this.props.book;
   return (
-    <tr>
-      <td>{ id }</td>
-      <td>{ title }</td>
-      <td>{ category }</td>
-      <td>
-        <button onClick={this.handleClick}>delete</button>
-      </td>
-    </tr>
+    <div className='bookHolder'>
+      <div className='bookDetails'>
+        <div className='bookId'>{ id }</div>
+        <div>{ title }</div>
+        <div>{ category }</div>
+      </div>
+      <div>
+        <button onClick={this.handleClick} className='delButton'>delete</button>
+      </div>
+    </div>
   )
 }
 }

@@ -4,9 +4,10 @@ import categories from '../utils/categories';
 const CategoryFilter = (props) => {
   const FilterCategories = ['All', ...categories];
   return(
-    <div>
-      <p>Filter</p>
-      <div>
+    <div className='header'>
+      <div className='appTitle'>BookStore CMS</div>
+      <div className='filterDiv'>
+        <p className='hashText'>Categories</p>
         <select
         name='category'
         onChange={props.changeFilter}
