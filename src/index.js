@@ -11,9 +11,9 @@ import './index.css';
 
 const INITIAL_STATE = {
   books: [
-  {id: shortid.generate(), title: 'First book in series', category: 'sci-fi'},
-  {id: shortid.generate(), title: 'Second book in series', category: 'romance'},
-  {id: shortid.generate(), title: 'Third book in series', category: 'sci-fi'}
+  {id: shortid.generate(), title: 'Walking Dead', category: 'sci-fi'},
+  {id: shortid.generate(), title: 'Romeo and Juliet', category: 'romance'},
+  {id: shortid.generate(), title: 'The last moon landing', category: 'sci-fi'}
   ]
 }
 

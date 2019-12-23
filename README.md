@@ -1,12 +1,14 @@
-This is a react project to build a web based bookstore.
+# BookStore
+A web based book store to store user's favourite books
+
+
 
 ## Technologies
-React
-Redux
-Javascript
-Nodejs
-CSS
-HTML
+- React
+- Redux
+- Javascript
+- CSS
+- HTML
 
 Author - Raphael Noriode
 
